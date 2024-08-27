@@ -1,0 +1,238 @@
+.top-bar {
+    background-color: #57070c; /* Rojo oscuro */
+    color: #fff;
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(25, 25, 25, 0.414); /* Sombra para mejorar visibilidad */
+}
+
+.top-bar .toggle-btn {
+    background-color: #57070c;
+    color: white;
+    border: none;
+    font-size: 2rem; /* Aumenta el tamaño del botón */
+    margin-left: 1rem; /* Espacio entre el botón y el borde izquierdo */
+    margin-right: 1rem;
+    font-family: "Roboto Condensed", sans-serif !important;
+}
+
+
+
+.navbar-nav {
+    font-size: 4rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.5rem; /* Tamaño de la fuente para las opciones */
+    font-family: "Roboto Condensed", sans-serif;
+    justify-content: space-between;
+}
+.navbar-nav .nav-link:hover {
+    background-color: #ffffff; /* Un tono más oscuro de rojo */
+}
+.dropdown-menu {
+    background-color: #ffffff;
+    border: none;
+}
+.dropdown-item {
+    color: #fff;
+    padding-left: 2rem;
+    font-size: 1.3rem !important; /* Tamaño de la fuente para los ítems del dropdown */
+    font-family: "Roboto Condensed", sans-serif !important;
+    margin-top: 0.5rem; /* Espacio entre los ítems del dropdown */
+    margin-bottom: 0.8rem; /* Espacio entre los ítems del dropdown */
+    text-align: center; /* Centra el texto dentro de cada ítem */
+    display: block; /* Asegura que los ítems se comporten como bloques */
+}
+
+.dropdown-item:hover {
+    background-color: #5a0000;
+}
+.vertical-nav {
+    width: 250px;
+    background-color: #57070c;
+    padding-top: 3rem;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: -250px; /* Inicialmente oculto */
+    z-index: 1000;
+    transition: left 0.3s;
+}
+.vertical-nav.show {
+    left: 0;
+}
+
+.nav-item.dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-item.dropdown .dropdown-menu {
+    background-color: #5a0000; /* Rojo oscuro del dropdown */
+    border-radius: 0;
+    margin-top: 0; /* Asegura que el menú se despliegue hacia abajo sin espacios */
+}
+.nav-item.dropdown .dropdown-item {
+    background-color: transparent;
+    color: #fff;
+    padding-left: 1.5rem;
+    font-size: 1.5rem; /* Tamaño de la fuente para los ítems del dropdown */
+    font-family: "Roboto Condensed", sans-serif !important;
+}
+.nav-item.dropdown .dropdown-item:hover {
+    background-color: #3e0000; /* Un tono más oscuro para el hover */
+}
+.content {
+    padding: 1rem;
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+    margin-top: 110px; /* Aumenta el margen superior para evitar que el contenido se superponga con la barra superior */
+}
+
+/* Estilo específico para la palabra "Menú" */
+.menu-title {
+    color: rgba(180, 179, 179, 0.691); /* Gris opaco */
+    font-size: 3rem;
+    padding-left: 0.8rem; /* Espacio en la izquierda */
+    font-family: "Roboto Condensed", sans-serif !important;
+}
+
+/* Estilo para el icono del caret */
+.nav-item.dropdown .bi-caret-down-fill {
+    font-size: 1.3rem; /* Tamaño del ícono */
+    margin-right: 1rem;
+    margin-left: -1rem;
+}
+.nav-item.dropdown .bi-tag-fill {
+    font-size: 1.3rem; /* Tamaño del ícono */
+    margin-right: -2.5rem;
+}
+
+.nav-link .bi {
+    margin-right: 10px; /* Ajusta el valor según el espacio que desees */
+}
+
+.nav-link .icon-margin {
+    margin-right: 10px; /* Ajusta el valor según el espacio que desees */
+}
+
+
+.nav-item.dropdown .fa-gavel {
+    font-size: 1.3rem; /* Tamaño del ícono */
+    margin-right: -3.5rem;
+}
+.nav-item.dropdown .classdeliconosmenus {
+    font-size: 1.3rem; /* Tamaño del ícono */
+    margin-right: -1.5rem;
+}
+.nav-item.dropdown .fa-envelope {
+    font-size: 1.3rem; /* Tamaño del ícono */
+    margin-right: -1.2rem;
+}
+.paraFueradeElotrodiv {
+    font-size: 1.4rem; /* Tamaño del ícono */
+    margin-right: 0.8rem;
+}
+.paraFueradeElotrodiv2 {
+    font-size: 1.4rem; /* Tamaño del ícono */
+    margin-right: 0.6rem;
+}
+.paraFueradeElotrodiv3 {
+    font-size: 1.4rem; /* Tamaño del ícono */
+}
+
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none; /* Elimina el pseudo-elemento 'after' */
+}
+
+.bi-box-arrow-right{
+    width: 12px;
+}
+
+.BotonLogiinregis {
+    margin: 0.61rem;
+  font: inherit;
+  background-color: #f0f0f0;
+  border: 0;
+  color: #242424;
+  border-radius: 0.6em;
+  font-size: 1rem;
+  padding: 0.3em 1.2em;
+  font-weight: 600;
+  text-shadow: 0 0.0625em 0 #fff;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.BotonLogiinregis:active {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+}
+
+.bi-bell-fill{
+    font-size: 1.5rem;
+    color: white;
+    margin: 0.5rem;
+}
+
+
+.floating-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #57070c;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.floating-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.floating-menu ul li {
+    padding: 0px;
+    text-align: left;
+}
+
+.floating-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.derecha {
+    position: relative;
+}
+
+.skiptranslate iframe {
+    opacity: 0 !important;
+    z-index: -10000;
+}
+img[src="https://www.google.com/images/cleardot.gif"]
+{
+    display: none;
+}
+
+.EstiloImagBS{
+    margin-top: -18px;
+    margin-left: 10px;
+}
+
+

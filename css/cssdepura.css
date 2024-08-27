@@ -1,0 +1,1474 @@
+/*Colores principales*/
+:root {
+    --primary-color: #57070c;
+    --primary: #408CF9;
+    --white: #FFFFFF;
+    --sidebar-primary-hover: #2B2B2F;
+    --sidebar-background: #57070c;
+    --background: #F3F5F6;
+    --text-link: #FFFFFF;
+    --expand-button: #ffffff;
+    --logout: #FA7575;
+    --search-background: #57070c;
+}
+
+/*CSS de inicio de sesion*/
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    --primary: #000000;
+    --primary-light: #22211F;
+    --primary-disabled: #363435;
+    --primary-lighter: #454344;
+    --secondary: #1D1D1D;
+    --text: #11181C;
+    --text-gray: #687076;
+    --text-placeholder: #8890A7;
+    --border: #DFE3E6;
+    --btn-bg: #EDEDED;
+    --input-bg: #F1F2F3;
+    --background: #F8F8FF;
+    --error: #e5484d;
+}
+
+
+.BoddyDos {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    background: var(--background);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: var(--primary-light);
+    color: white;
+}
+
+.form-welcome-row {
+    margin-bottom: 1rem;
+}
+
+.form-welcome-row h1 {
+    color: var(--text);
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.form-welcome-row h2 {
+    color: var(--text-gray);
+    font-size: 1.10rem;
+    font-weight: normal;
+}
+
+.form-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    gap: 1rem;
+    max-height: 200rem;
+    height: 100%;
+    width: 100%;
+}
+
+.form-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    height: 4rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    gap: 1.25rem;
+    max-width: 26rem;
+    width: 100%;
+}
+
+.my-form__button {
+    background: var(--primary);
+    border: 1px solid var(--primary-light);
+    color: white;
+    white-space: nowrap;
+    display: grid;
+    place-items: center;
+    margin-top: 1.5rem;
+    line-height: 2.75rem;
+    outline: none;
+    border: none;
+    font-size: 1.125rem;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+    transition: all .3s ease;
+}
+
+.my-form:invalid .my-form__button {
+    pointer-events: none;
+    background: var(--primary-disabled);
+    border: 1px solid var(--primary-light);
+}
+
+.my-form__actions {
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.my-form__actions a {
+    color: var(--text);
+}
+
+.my-form__actions a:hover {
+    color: var(--text-gray);
+    text-decoration: underline;
+}
+
+.my-form__row_Cuenta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: #000000;
+}
+
+.text-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #000;
+}
+
+.text-field input {
+    color: var(#000);
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid var(--border);
+    min-height: 3rem;
+    letter-spacing: .03rem;
+    outline: none;
+    background: var(--input-bg);
+    transition: .25s;
+    border-radius: 0.5rem;
+    text-indent: 1.25rem;
+}
+
+.text-field label {
+    color: var(--text);
+}
+
+.text-field .TexFondoOscuro {
+    color: white;
+}
+
+.text-field input:user-invalid {
+    background: var(--white);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+.error-message {
+    display: none;
+}
+
+.text-field input:user-invalid~.error-message {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--error);
+}
+
+.text-field input:focus {
+    border: 1px solid var(--text);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 4px 0px;
+}
+
+/* aside */
+.info-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: url('../Imagenes/mazo.jpg') repeat center center;
+    background-position: cover;
+    max-height: 90rem;
+}
+
+.info-side .blockquote-wrapper {
+    gap: 1rem;
+    position: relative;
+    padding: 1rem;
+    max-width: 25rem;
+    background: white;
+    border-radius: 1rem;
+}
+
+.info-side .blockquote-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.info-side .blockquote-wrapper blockquote {
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.info-side .author {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.info-side .author img {
+    border-radius: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.info-side .author-name {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.bloquepadredeRegistro{
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+@media (max-width: 720px) {
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .info-side {
+        display: none;
+    }
+}
+
+
+/*Aqui termina el CSS del inicio de sesion*/
+
+
+/* Estilo de menu*/
+
+.navbar{
+    background-color: #57070c;
+}
+
+.fixed-top, .sb-nav-fixed #layoutSidenav #layoutSidenav_nav, .sb-nav-fixed .sb-topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    justify-content: space-between;
+}
+
+#layoutAuthentication {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#layoutAuthentication #layoutAuthentication_content {
+    min-width: 0;
+    flex-grow: 1;
+}
+
+#layoutAuthentication #layoutAuthentication_footer {
+    min-width: 0;
+}
+  
+#layoutSidenav {
+    display: flex;
+}
+
+#layoutSidenav #layoutSidenav_nav {
+    flex-basis: 225px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease-in-out;
+    z-index: 1038;
+    transform: translateX(-225px);
+}
+  
+.sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(0);
+}
+  
+.sb-nav-fixed .sb-topnav {
+    z-index: 1039;
+}
+  
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
+    width: 225px;
+    height: 100vh;
+    z-index: 038;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
+    padding-top: 56px;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav .sb-sidenav-menu {
+    overflow-y: auto;
+    font-family: "Bebas Neue";
+}
+  
+.nav .nav-link .sb-nav-link-icon,
+.sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    margin-right: 0.5rem;
+    
+
+}
+  
+.sb-topnav {
+    padding-left: 0;
+    height: 56px;
+    z-index: 1039;
+}
+
+.sb-topnav .navbar-brand {
+    width: 225px;
+    margin: 0;
+}
+
+.sb-topnav.navbar-dark #sidebarToggle {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-topnav.navbar-light #sidebarToggle {
+    color: #57070c;
+}
+  
+.sb-sidenav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: nowrap;    
+}
+
+/* MENÚ MEJORADO */
+
+.sb-sidenav {
+    background-color: #343a40;
+    color: white;
+}
+.sb-sidenav a {
+    color: white;
+}
+.sb-sidenav a:hover {
+    background-color: #495057;
+    color: white;
+}
+.sb-sidenav-footer {
+    background-color: #212529;
+    color: white;
+}
+.btn-session {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    background-color: #212529;
+    color: white;
+    text-decoration: none;
+}
+.btn-session:hover {
+    background-color: #343a40;
+    color: white;
+}
+/*fin */
+
+.sb-sidenav .sb-sidenav-menu {
+    flex-grow: 1;
+}
+ 
+.sb-sidenav .sb-sidenav-menu .nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
+    padding: 1.75rem 1rem 0.75rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
+    font-size: 1rem;
+    padding: 9px;
+
+}
+  
+.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {
+    display: inline-block;
+    margin-left: auto;
+    transition: transform 0.15s ease;
+}
+  
+.sb-sidenav .sb-sidenav-menu .nav .nav-link.collapsed .sb-sidenav-collapse-arrow {
+    transform: rotate(-90deg);
+}
+  
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
+    margin-left: 1.5rem;
+    flex-direction: column;
+}
+  
+.sb-sidenav .sb-sidenav-footer {
+    padding: 0.75rem;
+    flex-shrink: 0;
+}
+  
+.sb-sidenav-dark {
+    background-color: #57070c;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+
+}
+  
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading :hover{
+    color: rgba(255, 255, 255, 0.994);
+}
+  
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/*Color de iconos de menu*/ 
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    color: rgba(223, 223, 223, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon :hover{
+    color: rgba(255, 255, 255, 0.994);
+
+}
+
+
+
+/*Color de flechas de menu*/
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+    color: rgba(255, 255, 255, 0.25);
+}
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow :hover{
+    color: rgba(255, 255, 255, 0.994);
+
+}
+
+/*Color de hover de letras de menu*/
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+    color: rgba(255, 255, 255, 0.994);
+}
+  
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
+    color: rgba(255, 255, 255, 0.994);
+    padding: 10px;
+
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+    color: rgba(255, 255, 255, 0.994);
+    padding: 10px;
+
+}
+  
+.sb-sidenav-dark .sb-sidenav-footer {
+    background-color: rgb(215, 204, 204);
+}
+
+  
+.sb-sidenav-light {
+    background-color: #f8f9fa;
+    color: #57070c;
+    padding: 10px;
+
+}
+
+.sb-sidenav-light .sb-sidenav-menu .sb-sidenav-menu-heading {
+    color: #adb5bd;
+}
+  
+.sb-sidenav-light .sb-sidenav-menu .nav-link {
+    color: #57070c;
+    padding: 10px;
+}
+  
+.sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    color: #adb5bd;
+}
+  
+.sb-sidenav-light .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+    color: #adb5bd;
+}
+  
+.sb-sidenav-light .sb-sidenav-menu .nav-link:hover {
+    color: #0d6efd;
+}
+  
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active {
+    color: #0d6efd;
+}
+  
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+    color: #0d6efd;
+}
+  
+.sb-sidenav-light .sb-sidenav-footer {
+    background-color: #e9ecef;
+}
+
+/* estilos de el baner del index */
+
+.carousel{
+    margin-top: 0.5%;
+}
+
+
+
+/* estilo de los productos - Manuel  LE CAMBIE DETALLITOS HAY LO PROBAS SI TE GUSTA SOLO COPIA Y PEGA :) */
+
+.container {
+    max-width: 0;
+    width: 100%;
+    min-width:95%;
+    margin:5rem auto;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+    color: var(--headline-color);
+    font-size: 1rem;
+    padding: auto;
+    margin-bottom: 50px;
+}
+
+.top-bar h2 {
+    margin-top: 5%;
+    text-align: center;
+    justify-content: center;
+    margin-block-end: 3%;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 2.5rem;
+}
+
+.top-bar svg {
+    color: var(--headline-color);
+}
+
+.event {
+    appearance: none;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    min-width: 24rem;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: start;
+    overflow: hidden;
+    color: rgba(29, 32, 59, 1);
+}
+
+.event__image {
+    position: relative;
+}
+
+.event__indicator {
+    position: absolute;
+    padding: 0.5rem;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+
+.event-description {
+    color: var(--event-text);
+    padding: 1.5rem 3rem;
+    margin-left: -5px;
+    margin-bottom: 75px;
+}
+
+.event img {
+    width: 100%;
+    height: 22rem;
+    border-radius: 2rem;
+    object-fit: cover;
+    object-position:center;
+}
+
+.event h2 {
+    font-size: 1.375rem;
+    margin-left: -20px;
+    letter-spacing: normal;
+    overflow-wrap: normal;
+    white-space: nowrap;
+    font-weight: 700;
+    line-height: 2rem;
+    color: var(--event-headline);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#Subastas {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.Dinero{
+    color: green;
+}
+
+.FlechaDeSubida{
+    color: red;
+    margin-left: -10px;
+}
+
+.PersonasSubasta{
+    color: blue;
+}
+
+/* estilo de footer */
+
+footer {
+    background-color: var(--primary-color);
+    width: 100%;
+    min-width: 0rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+.LetrasFooterMini{
+    color: rgb(255, 255, 255);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.LetrasFooterDesarrolladores{
+    font-size:25px;
+    padding-top: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.LetrasFooterCreaJ{
+    color: rgb(255, 255, 255);;
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    margin: -1rem;
+}
+  
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 80rem;
+    width: 100%;
+    padding: 1rem;
+}
+  
+.RedesSociales{
+      display: flex;
+}
+  
+.X{
+      color: white;
+      padding: 12px;
+}
+  
+  .whatsapp{
+      color: white;
+      padding: 12px;
+  }
+  
+  .Instagram{
+      color: white;
+      padding: 12px;
+  }
+  
+  .Facebook{
+      color: white;
+      padding: 12px;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 4;
+    gap: 3rem 1rem;
+  }
+  
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .footer-columns section, 
+  .footer-columns .footer-logo {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 10rem;
+    max-width: 10rem;
+  }
+  
+  .footer-columns ul {
+    display: flex;
+    gap: 0.75rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    font-weight: 600;
+  }
+  
+  .footer-columns ul a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  .footer-columns ul a:hover{
+    text-decoration: underline;
+  }
+  
+  .footer-columns h3 {
+    color: var(--text-heading-gray);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .footer-logo {
+      margin-top: 5%;
+    display: flex;
+    gap: 1rem;
+    flex-grow: 1;
+    max-width: 10rem;
+    margin-bottom: 4rem;
+  }
+  
+  
+  
+  .footer-logo svg {
+    stroke: var(--text-color);
+    stroke-width: 0.5rem;
+    width: 1.4rem;
+    height: 3rem;
+  }
+  
+  .footer-bottom {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--text-color);
+    border-top: 1px solid var(--white);
+}
+  
+  .footer-bottom > small {
+    margin: 0 0.25rem;
+  }
+  
+  .footer-headline > h2 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+  
+  .footer-headline > p {
+    color: var(--text-color);
+    margin: 0.25rem 0 1.25rem 0;
+  }
+  
+  .footer-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .footer-description h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  /*? socials */
+  
+  .social-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    justify-content: end;
+    margin-bottom: 1rem;
+    align-items: center;
+    color: var(--text-color);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .social-links img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .social-links img:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style-type: none;
+    
+  }
+  
+  /*? mobile */
+  @media (min-width: 926px) {
+    .footer-logo {
+        margin-right: auto;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0.5rem 2rem 0.5rem;
+    }
+  
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+    }
+  
+    .social-wrapper {
+        justify-content: center;
+    }
+  }
+
+
+  /*Estilos de card de donaciones*/
+
+
+  .cards-wrapper{
+    display: flex;
+    margin-top: 0px;
+  }
+
+  .card{
+    margin: 3rem;
+    text-align:justify;
+    padding: 2px;
+    
+  }
+  
+  /* CSS de página - Entretenimiento */
+
+  .image-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+}
+
+.full-page-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    object-position: center; 
+}
+
+.Entrete{
+    font-size: 1.375rem;
+    letter-spacing: normal;
+    overflow-wrap: normal;
+    white-space: nowrap;
+    font-weight: 700;
+    line-height: 1.75rem;
+    color: var(--event-headline);
+    text-overflow: ellipsis;
+justify-content: center;
+}
+
+  /* CSS de la pagina de donaciones y reclamos */
+
+  .Form{
+    margin: 3rem;
+    border-radius: 22px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #57070c;
+    padding: 52px;
+    width: 50%;
+  }
+
+  .form-outline{
+    width: 100%;
+
+  }
+
+  .Iconoos{
+    display: flex;
+    width: 3rem;
+  }
+
+  /* css de privacidad mensaje */
+  
+  .margenesdelformulario{
+
+    margin-top: 10%;
+
+  }
+  
+
+
+/* Página - Inspector */
+
+/* "Carrusel" de inspector */
+
+.carrusel_Inspec {
+    display: flex;
+    background-color: #f8f9fa; 
+    padding: 0; 
+    border-radius: 0; 
+    box-shadow: 0 4px 12px rgba(188, 188, 188, 0.1); 
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    margin: 0;
+    margin-top: 3%;
+    margin-bottom: 8%;
+  }
+  
+  .slider-img {
+    width: 100vw; 
+    height: auto;   
+}
+  
+
+/* Estilo para el contenedor principal */
+.container {
+    background-color: #f8f9fa; 
+    margin: 10px;
+    padding: 20px; 
+    border-radius: 15px; 
+  }
+  
+  .container.img {
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%; 
+  }
+  
+  p.lead{
+    font-size: 1.5rem; 
+    color: #343a40; 
+    font-weight: bold; 
+    line-height: 2.0px; 
+    max-width: 700px; 
+    margin: auto; 
+  }
+
+    
+/* Diseño de Solicitudes de donación y es el mismo de Realizar Donación xd */
+
+.title_tabla h1 {
+    text-align: center;
+    justify-content: center;
+    color: black;
+    font-family: 'Marcellus';
+    font-weight: 400;
+    margin-bottom: 50px;
+    margin-top: 70px;
+}
+.containerSoli {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 80vh;
+    width: 90%;
+    font-family: 'Marcellus';
+    border: 2px solid #57070c;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(132, 171, 238, 0.932);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background-color: #ddd;
+    text-align: center;
+}
+.tabla tbody tr:hover {
+    background-color: #ddd;
+}
+
+.tabla thead tr th{
+    color: black;
+    justify-content: center;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    width: 500px;
+}
+
+.btn-group button{
+    font-size: 18px;
+    margin-inline: 10px;
+    width: 100px;
+    border-radius: 5%;
+}
+
+/* CSS admin */
+.LetrasIngresos{
+    font-size: 2rem;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    font-family: Bebas neue;
+}
+
+.star{
+    color: rgb(251, 142, 0);
+}
+
+.reseñasbtn{
+
+    margin: 3%;
+
+}
+
+/*CSS usuarios_vista*/
+
+.usuariosVista{
+    height: 60%;
+    width: 90%;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.buttom{
+    width: auto;
+    height: auto;
+    background-color: burlywood;
+    border-radius: 10px;
+    justify-tracks: center;
+}
+
+.visual{
+    text-decoration: none;
+    color: #000;
+    margin-left: 20px;
+    
+}
+
+
+/* CSS del contador*/
+.contador {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contador span {
+    margin: 0 10px;
+}
+
+.walletBalanceCard {
+    width: fit-content;
+    height: 55px;
+    background-color: #57070c;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 0px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .svgwrapper {
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .svgwrapper svg {
+    width: 100%;
+  }
+  .balancewrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 120px;
+    gap: 0px;
+  }
+  .balanceHeading {
+    font-size: 12px;
+    color: rgb(214, 214, 214);
+    font-weight: 100;
+    letter-spacing: 0.6px;
+    padding-top: 15px;
+  }
+  .balance {
+    font-size: 13.5px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .addmoney {
+    padding: 1px 15px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .addmoney:hover {
+    background-color: whitesmoke;
+    color: #57070c;
+  }
+  .plussign {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+ .slick-loading .slick-list
+{
+    background: #fff url('./ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('./fonts/slick.eot');
+    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+}
+
+/* CSS CREAR UNA SUBASTA */
+
+
+.CrearSubastaCard{
+    margin-top: 3rem;
+}
+
+.SelectletraAdentro{
+    font-size: 3rem;
+
+
+}
+
+:root {
+    --primary: #57070c;
+    --primary-hover: #6c00ca;
+    --secondary-hover: #383838;
+    --gray: #797979;
+    --border: #333333;
+    --dropzone-border: #FFF;
+    --headline: #FFF;
+    --text: #ffffff;
+    --primary-text: #ffffff;
+    --dropzone-over: var(--secondary);
+}
+
+
+.dropzone-box {
+    margin: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 36rem;
+    border: 1px solid var(--border);
+    width: 100%;
+    background: var(--dropzone-bg);
+}
+
+.dropzone-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: var(--headline);
+}
+
+.dropzone-box p {
+    font-size: 1.15rem;
+    color: var(--gray);
+}
+
+.dropzone-area {
+    padding: 1rem;
+    position: relative;
+    margin-top: 1.5rem;
+    min-height: 16rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px dashed #57070C;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropzone-area .file-info {
+    font-size: 1.5rem;
+}
+
+.dropzone-area [type="file"] {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.dropzone-area .file-upload-icon svg {
+    height: 6rem;
+    max-width: 6rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+
+.dropzone--over {
+    border: 2px solid var(--primary);
+    background: var(--dropzone-over);
+}
+
+.dropzone-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.dropzone-actions button {
+    flex-grow: 1;
+    min-height: 3rem;
+    font-size: 1.2rem;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+
+.dropzone-actions button[type='reset'] {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--text);
+    background: var(--secondary);
+    cursor: pointer;
+    border: 1px solid var(--border);
+}
+
+.dropzone-actions button[type='reset']:hover {
+    background: var(--secondary-hover);
+}
+
+.dropzone-actions button[type='submit'] {
+    background: var(--primary);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary-text);
+    border: none;
+    cursor: pointer;
+}
+
+.dropzone-actions button[type='submit']:hover {
+    background: var(--primary-hover);
+}
+
+.LetrasBanersParaTraducir{
+    font-family: 'Marcellus' ,sans-serif;
+    margin-top: 8rem;
+    font-size: 4rem;
+}
+
+.LetrasBanersParaTraducirEntretenimiento{
+    font-family: 'Marcellus' ,sans-serif;
+    margin-top: 9rem;
+    margin-left: -42rem;
+    font-size: 8rem;
+}
+
+
+
+.LetrasBanersParaTraducirDescripcion1{
+    margin-left: -56rem;
+    font-size: 2rem;
+    font-family: 'Montserrat' ,sans-serif;
+
+}
+
+.LetrasBanersParaTraducirDescripcion2{
+    margin-top: -0.5rem !important;
+    margin-left: -65rem;
+    font-size: 2rem;
+    font-family: 'Montserrat' ,sans-serif;
+}
+
+.LetrasBanersParaTraducirModa{
+    font-family: 'Marcellus' ,sans-serif;
+    margin-top: 8rem;
+    margin-right: -45rem;
+    font-size: 8rem;
+}
+
+
+
+.LetrasBanersParaTraducirDescripcion3{
+    margin-right: -63rem;
+    font-size: 2rem;
+    font-family: 'Montserrat' ,sans-serif;
+
+}
+
+.LetrasBanersParaTraducirDescripcion4{
+    margin-top: -0.5rem !important;
+    margin-right: -63rem;
+    font-size: 2rem;
+    font-family: 'Montserrat' ,sans-serif;
+}
+
+.LetrasBanersParaTraducirDescripcion5{
+    margin-top: 2.4rem !important;
+    font-size: 2rem;
+    font-family: 'Montserrat' ,sans-serif;
+}
+
+.BannerTraducAdministrador{
+    background-image: url(../Imagenes/9.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+
+.BannerTraducTexto{
+    font-family: 'Marcellus', sans-serif !important;
+    color: white;
+    font-size: 5rem;
+}
+
+.BannerTraducInspector{
+    background-image: url(../Imagenes/12.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+
+.BannerTraducReclamos{
+    background-image: url(../Imagenes/7.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+}

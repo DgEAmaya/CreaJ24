@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Detalles del Producto</title>
+    <link rel="shortcut icon" href="../Imagenes/logo-mini.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cssdepura.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <div class="container mt-5">
+        <h1 class="page-header">Producto <small>Haz tu mejor oferta</small></h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-comment"></i> Subastas</li>
+            <li class="breadcrumb-item"><i class="fa fa-comments"></i> Todas las subastas</li>
+            <li class="breadcrumb-item active"><i class="fa fa-certificate"></i> Haz una oferta</li>
+        </ol>
+
+        <div class="row">
+            <?php
+            // Consulta de subasta
+            $res = $myconn->query("SELECT * FROM subastas WHERE id=$id_subasta");
+            if ($res->num_rows > 0) {
+                while ($row = $res->fetch_assoc()) {
+                    // Variables para los datos de la subasta
+                    $nombre_p = $row["nombre_producto"];
+                    $descripcion_p = $row["descripcion"];
+                    $tamano_p = $row["tamano_producto"];
+                    $color_p = $row["color_producto"];
+                    $telefono = $row["telefono"];
+                    $categoria = $row["categoria_producto"];
+                    $estado_producto = $row["estado_producto"];
+                    $subastador = $row["subastador"];
+                    $min = $row["min"];
+                    $max = $row["max"];
+                    $fecha_inicio = $row["fecha_hora_inicio"];
+                    $fecha_cierre = $row["fecha_hora_cierre"];
+                    $imagen_producto = base64_encode($row["imagen_producto"]);
+                    $imagen2 = base64_encode($row["imagen2"]);
+                    $imagen3 = base64_encode($row["imagen3"]);
+                    $imagen4 = base64_encode($row["imagen4"]);
+                    $imagen5 = base64_encode($row["imagen5"]);
+
+                    // Slider de imágenes del producto
+                    echo '
+                    <div class="col-md-6">
+                        <div id="productoCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">';
+                    if ($imagen_producto) {
+                        echo '<div class="carousel-item active">
+                                <img src="data:image/jpeg;base64,' . $imagen_producto . '" class="d-block w-100" alt="Imagen principal">
+                              </div>';
+                    }
+                    if ($imagen2) {
+                        echo '<div class="carousel-item">
+                                <img src="data:image/jpeg;base64,' . $imagen2 . '" class="d-block w-100" alt="Imagen adicional 2">
+                              </div>';
+                    }
+                    if ($imagen3) {
+                        echo '<div class="carousel-item">
+                                <img src="data:image/jpeg;base64,' . $imagen3 . '" class="d-block w-100" alt="Imagen adicional 3">
+                              </div>';
+                    }
+                    if ($imagen4) {
+                        echo '<div class="carousel-item">
+                                <img src="data:image/jpeg;base64,' . $imagen4 . '" class="d-block w-100" alt="Imagen adicional 4">
+                              </div>';
+                    }
+                    if ($imagen5) {
+                        echo '<div class="carousel-item">
+                                <img src="data:image/jpeg;base64,' . $imagen5 . '" class="d-block w-100" alt="Imagen adicional 5">
+                              </div>';
+                    }
+                    echo '
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productoCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productoCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>';
+
+                    // Detalles del producto
+                    echo '
+                    <div class="col-md-6">
+                        <h2>' . $nombre_p . '</h2>
+                        <p><strong>Descripción:</strong> ' . $descripcion_p . '</p>
+                        <p><strong>Tamaño:</strong> ' . $tamano_p . '</p>
+                        <p><strong>Color:</strong> ' . $color_p . '</p>
+                        <p><strong>Teléfono:</strong> ' . $telefono . '</p>
+                        <p><strong>Categoría:</strong> ' . $categoria . '</p>
+                        <p><strong>Estado del producto:</strong> ' . $estado_producto . '</p>
+                        <p><strong>Subastador:</strong> ' . $subastador . '</p>
+                        <p><strong>Fecha de inicio:</strong> ' . $fecha_inicio . '</p>
+                        <p><strong>Fecha de cierre:</strong> ' . $fecha_cierre . '</p>
+                        <p><strong>Oferta mínima:</strong> $' . $min . '.00</p>
+                        <p><strong>Oferta máxima:</strong> $' . $max . '.00</p>';
+
+                    // Lógica para las ofertas
+                    $res3 = $myconn->query("SELECT * FROM oferta WHERE id_subasta=$id_subasta ORDER BY id_oferta DESC LIMIT 1");
+                    if ($res3->num_rows > 0) {
+                        $row3 = $res3->fetch_assoc();
+                        $oferta = $row3["oferta"];
+                        echo '<h4>Oferta actual: <b class="text-danger">$' . $oferta . '.00</b></h4>';
+                    } else {
+                        echo '<h4>Oferta actual: <b class="text-danger">No hay ofertas disponibles</b></h4>';
+                    }
+
+                    // Formulario para realizar una oferta
+                    echo '
+                        <form action="" method="post">
+                            <input type="hidden" name="id_user" value="' . $_SESSION['idCliente'] . '">
+                            <input type="hidden" name="id_sub" value="' . $id_subasta . '">
+                            <input type="hidden" name="max" value="' . $max . '">
+                            <input type="hidden" name="fin" value="' . $fecha_cierre . '">
+                            <div class="form-group">
+                                <input type="number" name="oferta" class="form-control mb-3" max="' . $max . '" min="' . ($oferta + 1) . '" value="' . ($oferta + 1) . '">
+                            </div>
+                            <button type="submit" class="btn btn-warning me-2" name="ofertar">Mejorar oferta</button>
+                            <button type="submit" class="btn btn-success" name="comprar">Comprar ahora</button>
+                        </form>
+                    </div>';
+                }
+            } else {
+                echo '<h3>No existen subastas disponibles en este momento.</h3>';
+            }
+            ?>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
